@@ -1,7 +1,8 @@
 import express from "express";
-import dotenv from "dotenv"
+import { initializeConfigurations } from "./config/index.js";
 
-dotenv.config();
+initializeConfigurations();
+
 const app = express();
 
 /*
