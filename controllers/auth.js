@@ -56,8 +56,6 @@ export class AuthController {
     try {
       const { email, password } = req.body;
 
-      console.log(email)
-
       const user = await User.findOne({ email }).lean().exec();
 
       // If user not found
@@ -67,7 +65,7 @@ export class AuthController {
       // check if the password is correct
       if (await bcrypt.compare(password, user.password)) {
         const accessToken = jwt.sign(
-          { ...user, password: undefined }, 
+          { ...user, password: user.password }, 
           process.env.ACCESS_TOKEN_SECRET,
           { expiresIn: "7d" }
         )

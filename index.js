@@ -5,24 +5,6 @@ initializeConfigurations();
 
 const app = express();
 
-/*
-  Falsy Values in JS
-  -> false
-  -> 0
-  -> ""
-  -> null
-  -> undefined
-  -> NaN
-*/
-
-/*
-REST APIs
-  -> GET (Retrieve the data from the server)
-  -> POST (Creates a new data in the server/db)
-  -> DELETE (Delete the data in the server)
-  -> PUT (Update the data in the server)
-  -> PATCH (Update the data in the server)
-*/
 const PORT = process.env.PORT || 3000
 
 import authRouter from "./routes/auth.js"
