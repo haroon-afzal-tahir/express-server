@@ -51,10 +51,15 @@ export class AuthController {
       })
     }
   }
-    
+  
+  /**
+   * @param {express.Request} req 
+   * @param {express.Response} res 
+   */
   static async login(req, res) {
     try {
       const { email, password } = req.body;
+      console.log(req.body)
 
       const user = await User.findOne({ email }).lean().exec();
 
